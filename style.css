@@ -26,6 +26,7 @@ body {
   align-items: center;
 }
 
+/* ------------todo container------------------*/
 .btn {
   color: var(--white);
   font-size: 1.1rem;
@@ -37,19 +38,33 @@ body {
   right: 0.5rem;
   bottom: 0.5rem;
 }
-
-/* ------------todo container------------------*/
-.todo {
+.todo__dev {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(211, 211, 237, 0.2) 0px 7px 29px 0px;
+  padding: 0.5rem 1rem;
+  transition: all 1s ease;
+}
+.todo {
+    flex: 1;
+}
+.completed {
+    text-decoration: line-through;
+}
+.todo {
   background-color: var(--white);
   border-radius: 2rem;
-  padding: 3rem;
+  padding: 0.6rem;
   height: 50%;
-  width: 60%;
+  width: 100%;
   max-width: 30rem;
-  box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
+  box-shadow: 0 1rem 3rem 1rem rgba(202, 215, 245, 0.15);
+}
+.todo-container {
+  display: flex;
+  gap: 1rem;
 }
 
 h2,
@@ -64,7 +79,7 @@ h2 {
   text-align: center;
 }
 
-.input {
+#inputForm {
   display: flex;
   position: relative;
 }
@@ -79,6 +94,9 @@ input[type="text"] {
   border-radius: 1.5rem;
   padding: 1.25rem;
   font-size: 1rem;
+}
+input[type="text"]::placeholder {
+  color: var(--grey);
 }
 
 
@@ -95,7 +113,7 @@ li {
   padding: 1.3rem;
 }
 
-#todoList p {
+.todo p {
   color: #8f98a8;
 }
 
@@ -114,6 +132,7 @@ li {
 
 .footer {
   display: flex;
+  margin-top: 1rem;
   gap: 1.8rem;
   background-color: var(--white);
   padding: 1.2rem;
@@ -123,27 +142,28 @@ li {
 .slogan {
   color: var(--blue);
   font-size: 1.5rem;
+  margin-top: 1rem;
 }
-.scroll {
+#todoList{
   height: 15rem;
   scrollbar-width: thin;
 }
 
-.scroll::-webkit-scrollbar {
+.todo::-webkit-scrollbar {
   /*it makes sure, that it looks good across different  browser*/
   width: 0.6rem;
 }
 
-.scroll::-webkit-scrollbar-thumb {
+.todo::-webkit-scrollbar-thumb {
   background-color: var(--blue);
   border-radius: 0.5rem;
 }
-.scroll::-webkit-scrollbar-track {
+.todo::-webkit-scrollbar-track {
   display: none;
 }
 
 /* when an item has been checked */
-/* .disabled {
+.disabled {
   display: flex;
   text-decoration: line-through;
 }
@@ -164,12 +184,10 @@ input[type="checkbox"] ::before::after {
   background-color: var(--green);
   border: 0.06rem solid var(--green);
   border-radius: 50%;
-} */
+}
 
 @media screen and (max-width: 700px) {
   .slogan {
-    color: var(--blue);
-    font-weight: bold;
     font-size: 1rem;
   }
 }
