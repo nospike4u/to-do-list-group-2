@@ -1,0 +1,193 @@
+:root {
+  --gradient: linear-gradient(
+    180deg,
+    rgba(45, 112, 1253, 0.73) 0%,
+    #163e92 100%
+  );
+  --dark: black;
+  --grey: #b1bacb;
+  --green: rgb(144, 216, 144);
+  --gray-border: rgba(210, 210, 210, 0.75);
+  --grey-light: #eeeeee;
+  --grey-dark: #405175;
+  --blue: rgb(122, 122, 249);
+  --white: #ffffff;
+}
+
+body {
+  background: var(--gradient);
+  background-image: url(./istockphoto-1126841567-2048x2048.jpg);
+  margin: 0;
+  height: 100vh;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* ------------todo container------------------*/
+.btn {
+  color: var(--white);
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 1.3rem;
+  background-color: var(--blue);
+  border: none;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+.todo__dev {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(211, 211, 237, 0.2) 0px 7px 29px 0px;
+  padding: 0.5rem 1rem;
+  transition: all 1s ease;
+}
+.todo {
+    flex: 1;
+}
+.completed {
+    text-decoration: line-through;
+}
+.todo {
+  background-color: var(--white);
+  border-radius: 2rem;
+  padding: 0.6rem;
+  height: 50%;
+  width: 100%;
+  max-width: 30rem;
+  box-shadow: 0 1rem 3rem 1rem rgba(202, 215, 245, 0.15);
+}
+.todo-container {
+  display: flex;
+  gap: 1rem;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  height: 3rem;
+  color: var(--blue);
+  text-align: center;
+}
+
+#inputForm {
+  display: flex;
+  position: relative;
+}
+
+input[type="text"] {
+  color: var(--dark);
+}
+
+.input-field {
+  width: 100%;
+  border: 0.06rem solid #d2d2d2df;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  font-size: 1rem;
+}
+input[type="text"]::placeholder {
+  color: var(--grey);
+}
+
+
+ul {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.3rem;
+}
+
+.todo p {
+  color: #8f98a8;
+}
+
+.line {
+  border: 0.06rem solid var(--grey-light);
+}
+
+#deleteButton {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  color: var(--blue);
+  font-size: 1rem;
+  height: 2rem;
+}
+
+.footer {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1.8rem;
+  background-color: var(--white);
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.slogan {
+  color: var(--blue);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+#todoList{
+  height: 15rem;
+  scrollbar-width: thin;
+}
+
+.todo::-webkit-scrollbar {
+  /*it makes sure, that it looks good across different  browser*/
+  width: 0.6rem;
+}
+
+.todo::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  border-radius: 0.5rem;
+}
+.todo::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* when an item has been checked */
+.disabled {
+  display: flex;
+  text-decoration: line-through;
+}
+input[type="checkbox"] ::before {
+  content: "\2713";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.7rem;
+  text-align: center;
+  border: 0.06rem solid var(--grey-border);
+  border-radius: 50%;
+  color: transparent;
+}
+
+input[type="checkbox"] ::before::after {
+  color: var(--white);
+  background-color: var(--green);
+  border: 0.06rem solid var(--green);
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 700px) {
+  .slogan {
+    font-size: 1rem;
+  }
+}
